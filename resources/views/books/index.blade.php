@@ -4,7 +4,7 @@
 @section('content')
 
     <h3>Add new book</h3>
-    <form action="#" method="post" enctype="multipart/form-data">
+    <form action="{{ route('book.store') }}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
             <label for="title" class="form-label">Title</label>
