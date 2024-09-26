@@ -3,10 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthorController;
-
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+use App\Http\Controllers\BookController;
 
 Auth::routes();
 
@@ -24,5 +21,11 @@ Route::group(['middleware' => 'auth'], function () {
         Route::patch('/{id}/update', [AuthorController::class, 'update'])->name('update'); // author.update
         Route::get('/{id}/delete', [AuthorController::class, 'delete'])->name('delete'); // author.delete
         Route::delete('/{id}/destroy', [AuthorController::class, 'destroy'])->name('destroy'); // author.destroy
+    });
+
+      // BOOKS
+    Route::group(['prefix' => 'book', 'as' => 'book.'], function () {
+        Route::get  ('/', [BookController::class, 'index'])->name('index');      // book.index
+        Route::post('/store', [BookController::class, 'store'])->name('store');  // book.store
     });
 });

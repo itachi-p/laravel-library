@@ -19,13 +19,13 @@
                     <input type="number" maxlength="4" class="form-control" name="year_published" id="year-published"
                         placeholder="YYYY" value="">
                     {{-- Error --}}
-                    
+
                 </div>
                 <div class="col">
                     <label for="author_id" class="form-label">Author</label>
                     <select class="form-select" name="author_id" id="author_id">
                         <option value="">ANONYMOUS</option>
-                        
+
                     </select>
                 </div>
             </div>
@@ -36,7 +36,7 @@
                 <div class="col">
                     <input type="file" name="cover_photo" id="cover-photo" class="form-control" aria-describedby="cover-info">
                     <div id="cover-info" class="form-text">
-                        Acceptable formats: jpeg, jpg, png, gif only 
+                        Acceptable formats: jpeg, jpg, png, gif only
                         <br>
                         Maximum file size: 1048kb
                     </div>
