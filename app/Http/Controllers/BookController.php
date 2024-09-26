@@ -26,18 +26,17 @@ class BookController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title'       => 'required|min:1|max:50',
-            'year_published'      => 'required|numeric|max:4',
-            'author_id' => 'required|numeric',
-            'cover_photo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:1048',
+            'title'          => 'required|min:1|max:50',
+            'year_published' => 'required|numeric|digits:4',
+            'author_id'      => 'nullable|numeric',
+            'cover_photo'    => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:1048',
         ]);
 
-        $this->book->create([
-            'title' => $request->title,
-            'year_published' => $request->year_published,
-            'author_id' => $request->author_id,
-            'cover_photo' => $request->cover_photo,
-        ]);
+        $this->book->title          = $request->title;
+        $this->book->year_published = $request->year_published;
+        $this->book->author_id      = $request->author_id;
+        $this->book->cover_photo = 'data:image/' . $request->cover_photo->extension() . ';base64,' . base64_encode(file_get_contents($request->cover_photo));
+        $this->book->save();
 
         return redirect()->route('book.index');
             // ->with('success', 'Book has been added successfully.');

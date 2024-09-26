@@ -10,6 +10,9 @@
             <label for="title" class="form-label">Title</label>
             <input type="text" class="form-control w-100" name="title" id="title" value="" autofocus>
             {{-- Error --}}
+            @error('title')
+                {{ $message }}
+            @enderror
 
         </div>
         <div class="mb-3">
@@ -19,6 +22,9 @@
                     <input type="number" maxlength="4" class="form-control" name="year_published" id="year-published"
                         placeholder="YYYY" value="">
                     {{-- Error --}}
+                    @error('year_published')
+                        {{ $message }}
+                    @enderror
 
                 </div>
                 <div class="col">
@@ -46,7 +52,9 @@
                 </div>
             </div>
             {{-- Error --}}
-
+            @error('cover_photo')
+                {{ $message }}
+            @enderror
         </div>
     </form>
 
