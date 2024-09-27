@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Book;
 use Illuminate\Http\Request;
+use App\Models\Author;
 
 class BookController extends Controller
 {
@@ -17,7 +18,10 @@ class BookController extends Controller
     public function index()
     {
         $all_books = $this->book->latest()->get();
+        $all_authors = Author::all();
+
         return view('books.index')
+            ->with('all_authors', $all_authors)
             ->with('all_books', $all_books);
     }
 
@@ -40,5 +44,15 @@ class BookController extends Controller
 
         return redirect()->route('book.index');
             // ->with('success', 'Book has been added successfully.');
+    }
+
+
+      // show() - show detail of the book
+    public function show($id)
+    {
+        $book = $this->book->findOrFail($id);
+
+        return view('books.show')
+        ->with('book', $book);
     }
 }
