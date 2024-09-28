@@ -27,6 +27,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::group(['prefix' => 'book', 'as' => 'book.'], function () {
         Route::get  ('/', [BookController::class, 'index'])->name('index');      // book.index
         Route::post('/store', [BookController::class, 'store'])->name('store');  // book.store
-        Route::get('show', [BookController::class, 'show'])->name('show'); // book.show
+        Route::get('/show', [BookController::class, 'show'])->name('show'); // book.show
     });
 });
