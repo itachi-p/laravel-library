@@ -52,6 +52,14 @@
                                 </li>
                             @endif
                         @else
+                        {{-- ログイン後のユーザーには、ログアウトリンク（ドロップダウンメニュー）の左側に「Authors」「Books」のリンクを追加 --}}
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Authors</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('book.index') }}">Books</a>
+                            </li>
+
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
