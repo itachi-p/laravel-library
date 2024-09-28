@@ -28,6 +28,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get  ('/', [BookController::class, 'index'])->name('index');      // book.index
         Route::post('/store', [BookController::class, 'store'])->name('store');  // book.store
         Route::get('/show/{id}', [BookController::class, 'show'])->name('show'); // book.show
+        Route::get('/{id}/edit/', [BookController::class, 'edit'])->name('edit'); // book.edit
 
     });
 });
