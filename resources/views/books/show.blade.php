@@ -16,6 +16,7 @@
                 @else
                     <p class="h6 fw-bold text-muted">by ANONYMOUS</p>
                 @endif
+
                 <p class="text-muted">Published in {{ $book->year_published }}</p>
             </div>
         </div>
