@@ -68,19 +68,29 @@
 <h3>List of books</h3>
 @if($all_books->count() > 0)
 {{-- List of books --}}
-<ul class="list-group">
+<div class="container rounded border mt-3">
     @foreach ($all_books as $book)
-    <li class="list-group-item">
-        <a href="{{ route('book.show') }}">
-            {{ $book->title }}
-        </a>
-        <div class="d-inline text-end">
-            <i class="fa-solid fa-pen text-warning"></i>
-            <i class="fa-solid fa-trash-can text-danger"></i>
+    <div class="row align-items-center border">
+        <div class="col-8">
+            <a href="{{ route('book.show', $book->id) }}">
+                {{ $book->title }}
+            </a>
         </div>
-        @endforeach
-    </li>
-</ul>
+        <div class="col-4 d-flex justify-content-end">
+            <a href="#" class="btn btn-sm mr-2">
+                <i class="fas fa-file-pen text-warning"></i>
+            </a>
+            <form action="#" method="post">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-sm">
+                    <i class="fa-solid fa-trash-can text-danger"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+    @endforeach
+</div>
 @else
 <p>No books yet.</p>
 @endif
