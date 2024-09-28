@@ -6,7 +6,7 @@
     <div class="container rounded">
         <div class="row">
             <div class="col-3">
-                <img src="{{ $book->cover_photo }}" alt="{{ $book->title }} class="img-fluid">
+                <img src="{{ $book->cover_photo }}" alt="{{ $book->title }}" class="img-md">
             </div>
             <div class="col-9">
                 <h1>{{ $book->title }}</h1>
