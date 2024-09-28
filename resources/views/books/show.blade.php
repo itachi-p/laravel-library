@@ -6,11 +6,12 @@
     <div class="container rounded">
         <div class="row">
             <div class="col-3">
-                <img src="data:image/jpeg;base64,{{ $book->cover_photo }}" alt="{{ $book->title }} class="">
+                <img src="{{ $book->cover_photo }}" alt="{{ $book->title }}" class="img-md">
             </div>
-            <div class="col mx-auto">
+            <div class="col-9">
                 <h1>{{ $book->title }}</h1>
-                <p class="h6 fw-bold">by {{ $book->author }}</p>
+                <p class="h6 fw-bold">by {{ $book->author->name }}</p>
+
                 <p class="text-muted">Published in {{ $book->year_published }}</p>
             </div>
         </div>
