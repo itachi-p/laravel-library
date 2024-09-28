@@ -11,6 +11,7 @@
             <div class="col-9">
                 <h1>{{ $book->title }}</h1>
                 <p class="h6 fw-bold">by {{ $book->author->name }}</p>
+
                 <p class="text-muted">Published in {{ $book->year_published }}</p>
             </div>
         </div>
