@@ -55,4 +55,17 @@ class BookController extends Controller
         return view('books.show')
         ->with('book', $book);
     }
+
+    // edit() - This method will show the form for editing the book.
+    public function edit($id)
+    {
+        $book = $this->book->findOrFail($id);
+        $author = $book->author;
+        $all_authors = Author::all();
+
+            return view('books.edit')
+                ->with('book', $book)
+                ->with('author', $author)
+                ->with('all_authors', $all_authors);
+    }
 }
