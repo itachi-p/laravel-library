@@ -6,7 +6,7 @@
 <h3>Edit book</h3>
 <div class="row">
     <div class="col-4">
-        <img src="{{ $book->cover_photo }}" alt="{{ $book->author->name }}" class="img-md">
+        <img src="{{ $book->cover_photo }}" alt="" class="img-md">
     </div>
     <div class="col-6">
         <form action="#" method="post" enctype="multipart/form-data">
@@ -58,7 +58,6 @@
                     </div>
                 </div>
 
-                下記をSaveではなく、CancelとUpdate(色はbtn-warning)に変更
                 <div class="row mt-3">
                     <div class="col">
                         <a href="{{ route('book.index') }}" class="btn btn-outline-warning w-100">Cancel</a>
