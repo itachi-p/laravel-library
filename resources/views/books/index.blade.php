@@ -77,7 +77,7 @@
             </a>
         </div>
         <div class="col-4 d-flex justify-content-end">
-            <a href="#" class="btn btn-sm mr-2">
+            <a href="{{ route('book.edit', $book->id) }}" class="btn btn-sm mr-2">
                 <i class="fas fa-file-pen text-warning"></i>
             </a>
             <form action="#" method="post">

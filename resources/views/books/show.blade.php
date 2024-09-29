@@ -17,8 +17,14 @@
 
         <div class="row m-2">
             <div class="col-3">
-                <img src="{{ $book->cover_photo }}" alt="{{ $book->title }}" class="img-md m-2">
+                @if ($book->cover_photo)
+                    <img src="{{ $book->cover_photo }}" alt="{{ $book->title }}" class="img-md m-2">
+                @else
+                    <i class="fa-solid fa-images display-1"></i>
+                @endif
+
             </div>
+
             <div class="col-8 mx-auto">
                 <h2>{{ $book->title }}</h2>
                 {{-- authorがnullの場合、著者名にはANONYMOUSを表示 --}}

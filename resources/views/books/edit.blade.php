@@ -6,8 +6,13 @@
 <h3>Edit book</h3>
 <div class="row">
     <div class="col-4">
-        <img src="{{ $book->cover_photo }}" alt="" class="img-md">
+        @if($book->cover_photo)
+            <img src="{{ $book->cover_photo }}" alt="" class="img-md">
+        @else
+            <i class="fa-solid fa-images display-1"></i>
+        @endif
     </div>
+
     <div class="col-6">
         <form action="{{ route('book.update', $book->id) }}" method="post" enctype="multipart/form-data">
             @csrf
