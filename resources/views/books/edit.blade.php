@@ -57,10 +57,16 @@
                         </div>
                     </div>
                 </div>
-                <div class="row"></div>
+
+                下記をSaveではなく、CancelとUpdate(色はbtn-warning)に変更
+                <div class="row mt-3">
                     <div class="col">
-                        <button type="submit" class="btn btn-success w-100"><i class="fa-solid fa-save me-1"></i>Save</button>
+                        <a href="{{ route('book.index') }}" class="btn btn-outline-warning w-100">Cancel</a>
                     </div>
+                    <div class="col">
+                        <button type="submit" class="btn btn-warning w-100">Update</button>
+                    </div>
+
                 </div>
                 {{-- Error --}}
                 @error('cover_photo')
