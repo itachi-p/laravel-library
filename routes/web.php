@@ -29,6 +29,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/store', [BookController::class, 'store'])->name('store');  // book.store
         Route::get('/show/{id}', [BookController::class, 'show'])->name('show'); // book.show
         Route::get('/{id}/edit/', [BookController::class, 'edit'])->name('edit'); // book.edit
+        Route::patch('/{id}/update', [BookController::class, 'update'])->name('update'); // book.update
 
     });
 });

@@ -9,9 +9,9 @@
         <img src="{{ $book->cover_photo }}" alt="" class="img-md">
     </div>
     <div class="col-6">
-        <form action="#" method="post" enctype="multipart/form-data">
+        <form action="{{ route('book.update', $book->id) }}" method="post" enctype="multipart/form-data">
             @csrf
-            @method('PUT')
+            @method('PATCH')
             <div class="mb-3">
                 <label for="title" class="form-label">Title</label>
                 <input type="text" class="form-control w-100" name="title" id="title" value="{{ $book->title }}" autofocus>
