@@ -54,7 +54,7 @@
                         @else
                         {{-- ログイン後のユーザーには、ログアウトリンク（ドロップダウンメニュー）の左側に「Authors」「Books」のリンクを追加 --}}
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Authors</a>
+                                <a class="nav-link" href="{{ route('author.index') }}">Authors</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('book.index') }}">Books</a>
